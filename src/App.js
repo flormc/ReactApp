@@ -9,20 +9,25 @@ import './App.css';
 const defaultTodos = [
   { text: 'Cortar cebolla', completed: true},
   { text: 'Tomar el curso de Intro a React.js', completed: false},
+  { text: 'Llorar con la llorona', completed: false},
+  { text: 'LALALALALa', completed: false},
+  { text: 'UPS', completed: false},
 ]
 
 function App() {
   return (
     <React.Fragment>
-  <h1>Bienvenido a mi aplicación de tareas!</h1>
       <TodoCounter completed={16} total={25}/>
       <TodoSearch />
 
       <TodoList>
         {defaultTodos.map(todo => (
-        <TodoItem />  
+        <TodoItem 
+        key={todo.text}
+        text={todo.text}
+        completed={todo.completed}
+        />  
         ))}
-        {[]}
       </TodoList>
       
       <CreateTodoButton />
